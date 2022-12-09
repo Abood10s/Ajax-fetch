@@ -94,7 +94,7 @@ input::placeholder {
     padding: 26px 34px;
     gap: 34px;
     display: none;
-    transition: all 0.3s ease-in;
+    transition: display 0.3s ease-in;
 }
 
 .title-text,
@@ -128,4 +128,17 @@ i {
     align-items: center;
     gap: 34px;
     margin-top: 34px;
+}
+
+.error {
+    width: 445px;
+    height: 44px;
+    display: block;
+    border-radius: 4px;
+    text-align: center;
+    border-radius: 4px;
+    background-color: #F3F4F6;
+    border: 2px solid #94A3B8;
+    padding: 10px;
+    display: none;
 }
