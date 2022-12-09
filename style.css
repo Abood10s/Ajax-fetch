@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter';
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #F9FAFB;
+    padding-bottom: 2rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 34px;
+}
+
+.title {
+    margin: 0 auto;
+    margin-top: 45px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 87px;
+    color: #E2E8F0;
+}
+
+.card {
+    padding: 26px 34px;
+    gap: 12px;
+    width: 445px;
+    height: 171px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.acrd-title {
+    font-weight: 800;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 29px;
+    color: #374151;
+}
+
+.card .text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #6B7280;
+    font-style: normal;
+}
+
+input::placeholder {
+    color: #E2E8F0;
+}
+
+.card-title {
+    margin-bottom: 12px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 29px;
+    color: #374151;
+}
+
+.icon {
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    color: #E2E8F0;
+    /* display: none; */
+}
+
+.form {
+    width: 455px;
+    height: 331px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 26px 34px;
+    gap: 34px;
+    display: none;
+    transition: all 0.3s ease-in;
+}
+
+.title-text,
+.card-text {
+    width: 370px;
+    height: 44px;
+    display: block;
+    border-radius: 4px;
+    border: 1px solid #F3F4F6;
+    outline: #E2E8F0;
+    padding: 14px;
+}
+
+.card-text {
+    height: 70px;
+}
+
+i {
+    font-size: 36px;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    color: #94A3B8;
+    cursor: pointer;
+    margin: 0 0.5rem;
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 34px;
+    margin-top: 34px;
+}
