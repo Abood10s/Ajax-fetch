@@ -5,6 +5,7 @@ const cancel = document.getElementById("no");
 const form = document.getElementById("form");
 const form_title = document.getElementById("form-title");
 const form_body = document.getElementById("form-body");
+const error = document.getElementById("error");
 
 /*
 Getting the response using Ajax
@@ -33,7 +34,7 @@ xhr.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
 xhr.send();
 
 // event listeners
-let theTitle = "No title inserted";
+let theTitle = "";
 let theComplete = "";
 form_title.addEventListener("input", (e) => {
   theTitle = e.target.value;
@@ -49,8 +50,17 @@ const mydata = {
 };
 
 create.addEventListener("click", () => {
+  error.style.display = "none";
+
   form.style.display = "flex";
-  confirm.addEventListener("click", () => {
+
+  window.scrollTo(0, document.body.scrollHeight);
+});
+confirm.addEventListener("click", () => {
+  if (theTitle === "" && theComplete === "") {
+    form.style.display = "none";
+    error.style.display = "block";
+  } else {
     fetch(`https://jsonplaceholder.typicode.com/posts`, {
       method: "POST",
       headers: {
@@ -61,13 +71,12 @@ create.addEventListener("click", () => {
       .then((response) => response.json())
       .then((data) => {
         container.innerHTML += `<div class="card"><p class="card-title">${data.title}</p>
-                   <p class="text">${data.body}</p>
-                   </div>`;
+                 <p class="text">${data.body}</p>
+                 </div>`;
       });
 
     form.style.display = "none";
-  });
-  window.scrollTo(0, document.body.scrollHeight);
+  }
 });
 cancel.addEventListener("click", () => {
   form.style.display = "none";
