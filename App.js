@@ -36,19 +36,19 @@ xhr.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
 xhr.send();
 
 // event listeners
-let theTitle = "";
-let theComplete = "";
+let postTitle = "";
+let postBody = "";
 form_title.addEventListener("input", (e) => {
-  theTitle = e.target.value;
-  newPost.title = theTitle;
+  postTitle = e.target.value;
+  newPost.title = postTitle;
 });
 form_body.addEventListener("input", (e) => {
-  theComplete = e.target.value;
-  newPost.body = theComplete;
+  postBody = e.target.value;
+  newPost.body = postBody;
 });
 const newPost = {
-  title: theTitle,
-  body: theComplete,
+  title: postTitle,
+  body: postBody,
 };
 create.addEventListener("click", () => {
   form.style.display = "flex";
@@ -56,7 +56,7 @@ create.addEventListener("click", () => {
   window.scrollTo(0, document.body.scrollHeight);
 });
 confirm.addEventListener("click", () => {
-  if (theTitle === "" && theComplete === "") {
+  if (postTitle === "" && postBody === "") {
     form.style.display = "none";
     error.style.display = "block";
   } else {
