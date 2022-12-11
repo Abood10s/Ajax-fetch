@@ -75,11 +75,25 @@ input::placeholder {
 }
 
 .icon {
-    width: 36px;
-    height: 36px;
+    width: 100%;
+    height: 15vh;
     cursor: pointer;
     color: #E2E8F0;
-    /* display: none; */
+    background-image: linear-gradient(to top, #E2E8F0, transparent);
+    position: fixed;
+    bottom: 0px;
+}
+
+.icon svg {
+    width: 36px;
+    height: 36px;
+    display: block;
+    margin: 2rem auto;
+    fill: #acb0b6;
+}
+
+.icon svg:hover {
+    fill: #374151;
 }
 
 .form {
@@ -93,8 +107,8 @@ input::placeholder {
     align-items: center;
     padding: 26px 34px;
     gap: 34px;
+    transition: all 0.3s ease-in;
     display: none;
-    transition: display 0.3s ease-in;
 }
 
 .title-text,
@@ -141,4 +155,28 @@ i {
     border: 2px solid #94A3B8;
     padding: 10px;
     display: none;
+}
+
+#plus {
+    transition: all 0.2s ease-in;
+}
+
+#notification {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 300px;
+    background-color: #fff;
+    color: #4BB543;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border: 2px solid #4BB543;
+    transition: all 0.3s ease-out;
+}
+
+#notification i {
+    color: #4BB543;
+    font-size: 25px;
 }
