@@ -6,6 +6,8 @@ const form = document.getElementById("form");
 const form_title = document.getElementById("form-title");
 const form_body = document.getElementById("form-body");
 const error = document.getElementById("error");
+const plus = document.getElementById("plus");
+const notification = document.getElementById("notification");
 
 /*
 Getting the response using Ajax
@@ -38,22 +40,19 @@ let theTitle = "";
 let theComplete = "";
 form_title.addEventListener("input", (e) => {
   theTitle = e.target.value;
-  mydata.title = theTitle;
+  newPost.title = theTitle;
 });
 form_body.addEventListener("input", (e) => {
   theComplete = e.target.value;
-  mydata.body = theComplete;
+  newPost.body = theComplete;
 });
-const mydata = {
+const newPost = {
   title: theTitle,
   body: theComplete,
 };
-
 create.addEventListener("click", () => {
-  error.style.display = "none";
-
   form.style.display = "flex";
-
+  error.style.display = "none";
   window.scrollTo(0, document.body.scrollHeight);
 });
 confirm.addEventListener("click", () => {
@@ -66,7 +65,7 @@ confirm.addEventListener("click", () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(mydata),
+      body: JSON.stringify(newPost),
     })
       .then((response) => response.json())
       .then((data) => {
@@ -74,8 +73,11 @@ confirm.addEventListener("click", () => {
                  <p class="text">${data.body}</p>
                  </div>`;
       });
-
     form.style.display = "none";
+
+    setTimeout(() => (notification.style.right = "0"), 1000);
+    setTimeout(() => (notification.style.right = "-400px"), 3000);
+    plus.style.transform = "rotate(0deg)";
   }
 });
 cancel.addEventListener("click", () => {
